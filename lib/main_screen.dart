@@ -5,8 +5,13 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromARGB(255, 211, 255, 226),
+    return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 228, 255, 237),
+      body: Column(children: const [
+        Center(
+          child: Text("Morné le Roux"),
+        ),
+      ]),
     );
   }
 }
