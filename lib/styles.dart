@@ -7,3 +7,5 @@ import 'package:google_fonts/google_fonts.dart';
 final TextStyle kMainHeadingTextStyle = GoogleFonts.russoOne();
 
 final TextStyle kSecondaryHeadingTextStyle = GoogleFonts.righteous();
+
+const Color kBackgroundColor = Color.fromARGB(255, 228, 255, 237);
