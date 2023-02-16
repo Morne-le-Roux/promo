@@ -24,9 +24,9 @@ class _MainScreenState extends State<MainScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             //row for app showcase
             children: const [
-              AppCard(),
-              AppCard(),
-              AppCard(),
+              AppCard(assetImage: "Absentry.jpg"),
+              AppCard(assetImage: "cah_scoreboard.jpg"),
+              AppCard(assetImage: "picstate.jpg"),
             ],
           )
         ]),

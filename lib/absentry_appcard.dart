@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 class AppCard extends StatelessWidget {
-  const AppCard({super.key});
+  const AppCard({
+    super.key,
+    required this.assetImage,
+  });
+  final String assetImage; //string to pass for the location of the asset image
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +15,8 @@ class AppCard extends StatelessWidget {
         width: 300,
         height: 645,
         decoration: BoxDecoration(
-          image: const DecorationImage(
-              image: AssetImage("Absentry.jpg")), //image to display in card
+          image: DecorationImage(
+              image: AssetImage(assetImage)), //image to display in card
           borderRadius: BorderRadius.circular(20),
           boxShadow: const [
             BoxShadow(
