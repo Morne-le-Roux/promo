@@ -17,7 +17,7 @@ class HiImMorne extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(
-            height: 80, //space at the top of the screen
+            height: 40, //space at the top of the screen
           ),
           Text(
             "Hi, I'm",
@@ -28,7 +28,7 @@ class HiImMorne extends StatelessWidget {
                         2), //change the textScale multiplier on both sides for scale sizes. Change 30 for maximum text size.
           ),
           const SizedBox(
-            height: 20,
+            height: 5,
           ),
           Text(
             "Morné le Roux",
