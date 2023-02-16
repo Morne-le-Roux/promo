@@ -17,7 +17,7 @@ class HiImMorne extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(
-            height: 100,
+            height: 80, //space at the top of the screen
           ),
           Text(
             "Hi, I'm",
