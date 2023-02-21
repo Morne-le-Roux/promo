@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:promo/absentry_appcard.dart';
 import 'package:promo/styles.dart';
@@ -11,6 +12,14 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  //List of all the apps screenshots to display. Just use Appcard(assetImage)
+  List<Widget> appList = [
+    const AppCard(assetImage: "Absentry.jpg"),
+    const AppCard(assetImage: "cah_scoreboard.jpg"),
+    const AppCard(assetImage: "picstate.jpg"),
+    const AppCard(assetImage: "whatsapp_chat_dialer.jpg")
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,19 +37,15 @@ class _MainScreenState extends State<MainScreen> {
             style: kSecondaryHeadingTextStyle.copyWith(
                 color: Colors.white54, fontStyle: FontStyle.italic),
           ),
-
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            //row for app showcase
-            children: const [
-              //images for the apps made.
-              //TODO: when clicked on will open up github page for the project / maybe design a seperate page for every project?
-              AppCard(assetImage: "Absentry.jpg"),
-              AppCard(assetImage: "cah_scoreboard.jpg"),
-              AppCard(assetImage: "picstate.jpg"),
-              AppCard(assetImage: "whatsapp_chat_dialer.jpg")
-            ],
-          )
+          CarouselSlider(
+              items: appList,
+              //carousel. cuz every great website needs a carousel of annoying movement that keeps on distracting your eyes.
+              options: CarouselOptions(
+                  height: 1000,
+                  viewportFraction: 0.15,
+                  enlargeCenterPage: true,
+                  autoPlay: true,
+                  autoPlayInterval: const Duration(milliseconds: 2000)))
         ]),
       ),
     );
