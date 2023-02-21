@@ -43,17 +43,19 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
           CarouselSlider(
-              items: appList,
-              //carousel. cuz every great website needs a carousel of annoying movement that keeps on distracting your eyes.
-              options: CarouselOptions(
-                  height: 1000,
+            items: appList,
+            //carousel. cuz every great website needs a carousel of annoying movement that keeps on distracting your eyes.
+            options: CarouselOptions(
+              height: 1000,
 
-                  //TODO: this looks good for 1080p screens and portrait phone stuff. Need to work on the in between still
-                  viewportFraction: screenWidth > 1500 ? 0.15 : 0.5,
-                  enlargeCenterPage: true,
-                  enlargeFactor: 0.15,
-                  autoPlay: true,
-                  autoPlayInterval: const Duration(milliseconds: 4000)))
+              //TODO: this looks good for 1080p screens and portrait phone stuff. Need to work on the in between still
+              viewportFraction: screenWidth > 1500 ? 0.15 : 0.5,
+              enlargeCenterPage: true,
+              enlargeFactor: 0.15,
+              autoPlay: true,
+              autoPlayInterval: const Duration(milliseconds: 4000),
+            ),
+          ),
         ]),
       ),
     );
