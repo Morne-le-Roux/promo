@@ -39,7 +39,7 @@ class _MainScreenState extends State<MainScreen> {
             style: kSecondaryHeadingTextStyle.copyWith(
               color: Colors.white54,
               fontStyle: FontStyle.italic,
-              fontSize: 18,
+              fontSize: 25,
             ),
           ),
           CarouselSlider(
