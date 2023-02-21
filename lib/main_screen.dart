@@ -22,6 +22,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: SingleChildScrollView(
@@ -34,18 +35,25 @@ class _MainScreenState extends State<MainScreen> {
 
           Text(
             "I let my apps and code speak for themselves. Click on an app to see a preview and short description.",
+            textAlign: TextAlign.center,
             style: kSecondaryHeadingTextStyle.copyWith(
-                color: Colors.white54, fontStyle: FontStyle.italic),
+              color: Colors.white54,
+              fontStyle: FontStyle.italic,
+              fontSize: 18,
+            ),
           ),
           CarouselSlider(
               items: appList,
               //carousel. cuz every great website needs a carousel of annoying movement that keeps on distracting your eyes.
               options: CarouselOptions(
                   height: 1000,
-                  viewportFraction: 0.15,
+
+                  //TODO: this looks good for 1080p screens and portrait phone stuff. Need to work on the in between still
+                  viewportFraction: screenWidth > 1500 ? 0.15 : 0.5,
                   enlargeCenterPage: true,
+                  enlargeFactor: 0.15,
                   autoPlay: true,
-                  autoPlayInterval: const Duration(milliseconds: 2000)))
+                  autoPlayInterval: const Duration(milliseconds: 4000)))
         ]),
       ),
     );
