@@ -22,10 +22,18 @@ class HiImMorne extends StatelessWidget {
           Text(
             "Hi, I'm",
             style: kSecondaryHeadingTextStyle.copyWith(
-                fontSize: textScale * 2 > 30
-                    ? 30
-                    : textScale *
-                        2), //change the textScale multiplier on both sides for scale sizes. Change 30 for maximum text size.
+
+                // this is the only way i could figure out how to resize the text depending on what screen size you have.
+                // I still need to do more testing here. Maybe specifically on a phone and see what this looks like.
+
+                // TODO: Test this on an actual phone.
+
+                // It uses the above textScale variable determined from the width of the screen/window it's viewed on.
+                // If the text size is more than 30, it sets the text size as 30, otherwise it uses the textScales value times a multiplier.
+                // To adjust this, change the multiplier to change the general text size, and change the '30' for a maximum text size.
+                // No minimum is implemented just yet, but further testing is required first to check if it's actually necessary.
+                fontSize: textScale * 2 > 30 ? 30 : textScale * 2),
+            //
           ),
           const SizedBox(
             height: 5,
@@ -33,18 +41,12 @@ class HiImMorne extends StatelessWidget {
           Text(
             "Morné le Roux",
             style: kMainHeadingTextStyle.copyWith(
-                fontSize: textScale * 7 > 80
-                    ? 80
-                    : textScale *
-                        7), //change the textScale multiplier on both sides for scale sizes. Change 50 for maximum text size.
+                fontSize: textScale * 7 > 80 ? 80 : textScale * 7), // see above
           ),
           Text(
             "a flutter developer.",
             style: kSecondaryHeadingTextStyle.copyWith(
-                fontSize: textScale * 3 > 30
-                    ? 30
-                    : textScale *
-                        3), //change the textScale multiplier on both sides for scale sizes. Change 30 for maximum text size.
+                fontSize: textScale * 3 > 30 ? 30 : textScale * 3), // see above
           ),
 
           const SizedBox(height: 40), // Spacing
@@ -55,7 +57,7 @@ class HiImMorne extends StatelessWidget {
             style: kSecondaryHeadingTextStyle.copyWith(
               color: Colors.white54,
               fontStyle: FontStyle.italic,
-              fontSize: textScale * 3 > 20 ? 20 : textScale * 3,
+              fontSize: textScale * 3 > 20 ? 20 : textScale * 3, // see above
             ),
           ),
         ],
