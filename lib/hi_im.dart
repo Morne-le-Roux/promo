@@ -33,8 +33,8 @@ class HiImMorne extends StatelessWidget {
           Text(
             "Morné le Roux",
             style: kMainHeadingTextStyle.copyWith(
-                fontSize: textScale * 7 > 50
-                    ? 50
+                fontSize: textScale * 7 > 80
+                    ? 80
                     : textScale *
                         7), //change the textScale multiplier on both sides for scale sizes. Change 50 for maximum text size.
           ),
@@ -45,7 +45,19 @@ class HiImMorne extends StatelessWidget {
                     ? 30
                     : textScale *
                         3), //change the textScale multiplier on both sides for scale sizes. Change 30 for maximum text size.
-          )
+          ),
+
+          const SizedBox(height: 40), // Spacing
+
+          Text(
+            "I let my apps and code speak for themselves. Click on an app to see a preview and short description.",
+            textAlign: TextAlign.center,
+            style: kSecondaryHeadingTextStyle.copyWith(
+              color: Colors.white54,
+              fontStyle: FontStyle.italic,
+              fontSize: textScale * 3 > 20 ? 20 : textScale * 3,
+            ),
+          ),
         ],
       ),
     );

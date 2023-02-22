@@ -33,15 +33,6 @@ class _MainScreenState extends State<MainScreen> {
 
           const SizedBox(height: 40), //spacing above the app cards
 
-          Text(
-            "I let my apps and code speak for themselves. Click on an app to see a preview and short description.",
-            textAlign: TextAlign.center,
-            style: kSecondaryHeadingTextStyle.copyWith(
-              color: Colors.white54,
-              fontStyle: FontStyle.italic,
-              fontSize: 25,
-            ),
-          ),
           CarouselSlider(
             items: appList,
             //carousel. cuz every great website needs a carousel of annoying movement that keeps on distracting your eyes.
