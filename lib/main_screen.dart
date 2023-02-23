@@ -24,6 +24,19 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
+
+    //calculates vieportFraction, used for the carousel.
+    final double viewportFraction =
+        screenWidth < 1000 //if screenWidth is less than
+            ? 0.5 //use viewportFraction
+            : screenWidth < 1600 //else if if screenWidth is less than
+                ? 0.3 //use viewportFraction
+                : screenWidth < 2100 //else if if screenWidth is less than
+                    ? 0.2 //use viewportFraction
+                    : screenWidth < 3100 //else if if screenWidth is less than
+                        ? 0.15 //use viewportFraction
+                        : 0.1; //use viewportFraction
+
     return Scaffold(
       backgroundColor: kBackgroundColor,
       body: SingleChildScrollView(
@@ -51,13 +64,14 @@ class _MainScreenState extends State<MainScreen> {
               curve: Curves.fastOutSlowIn,
               builder: (context) {
                 return CarouselSlider(
-                  items: appList,
                   //carousel. cuz every great website needs a carousel of annoying movement that keeps on distracting your eyes.
+                  items: appList,
                   options: CarouselOptions(
-                    height: 1000,
+                    height: 900,
 
                     //TODO: this looks good for 1080p screens and portrait phone stuff. Need to work on the in between still
-                    viewportFraction: screenWidth > 1500 ? 0.15 : 0.5,
+                    viewportFraction:
+                        viewportFraction, //gets calculated at build
                     enlargeCenterPage: true,
                     enlargeFactor: 0.15,
                     autoPlay: true,
