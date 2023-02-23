@@ -69,7 +69,6 @@ class _MainScreenState extends State<MainScreen> {
                   options: CarouselOptions(
                     height: 900,
 
-                    //TODO: this looks good for 1080p screens and portrait phone stuff. Need to work on the in between still
                     viewportFraction:
                         viewportFraction, //gets calculated at build
                     enlargeCenterPage: true,

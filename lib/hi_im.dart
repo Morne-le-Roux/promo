@@ -41,12 +41,16 @@ class HiImMorne extends StatelessWidget {
           Text(
             "Morné le Roux",
             style: kMainHeadingTextStyle.copyWith(
-                fontSize: textScale * 7 > 80 ? 80 : textScale * 7), // see above
+                fontSize: textScale * 7 > 80
+                    ? 80
+                    : textScale * 7), // see how to adjust above
           ),
           Text(
             "a flutter developer.",
             style: kSecondaryHeadingTextStyle.copyWith(
-                fontSize: textScale * 3 > 30 ? 30 : textScale * 3), // see above
+                fontSize: textScale * 3 > 30
+                    ? 30
+                    : textScale * 3), // see how to adjust above
           ),
 
           const SizedBox(height: 40), // Spacing
